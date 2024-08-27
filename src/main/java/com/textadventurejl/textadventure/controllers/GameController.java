@@ -14,7 +14,7 @@ public class GameController {
     @GetMapping("/game")
     public String showGame(Model model) {
         model.addAttribute("gameState", gameState);
-        model.addAttribute("inventario", gameState.getInventario().listarItens()); // Lista de itens diretamente
+        model.addAttribute("inventario", gameState.getInventario().listarItens());
         return "game";
     }
 
@@ -22,7 +22,7 @@ public class GameController {
     public String processInput(@RequestParam String input, Model model) {
         processCommand(input.toLowerCase());
         model.addAttribute("gameState", gameState);
-        model.addAttribute("inventario", gameState.getInventario().listarItens()); // Atualizar a lista de itens
+        model.addAttribute("inventario", gameState.getInventario().listarItens());
         return "game";
     }
 
